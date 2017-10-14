@@ -1,0 +1,82 @@
+<style lang="less">
+.background {
+  height: 15rem;
+  width: 100%;
+  background-color: greenyellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  height: 7rem;
+  width: 7rem;
+  border: 0.1rem solid greenyellow;
+  background-color: white;
+  border-radius: 50%
+}
+
+.name {
+  margin-top: 2rem;
+}
+
+.want {
+  font-size: 1rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem
+}
+
+.line {
+  height: 0.5rem;
+  width: 100%;
+  background-color: whitesmoke;
+}
+</style>
+<template>
+  <view>
+    <view class="background">
+      <image class="circle" src="{{pic}}"></image>
+      <view class="name" @tap="onBack">{{name}}</view>
+    </view>
+    <view class="want">想用</view>
+    <view class="line"></view>
+    <view class="want">用过</view>
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class Self extends wepy.page {
+  config = {
+
+  }
+  data = {
+    pic: '../image/pic.png',
+    name: '登录'
+  }
+  methods = {
+    login() {
+      let self = this
+      self.pic = 'avatarUrl'
+      self.name = 'name'
+    },
+    onBack() {
+      wepy.navigateTo({
+        url: './login'
+      })
+    }
+  }
+  onLoad() {
+  }
+
+  onShow() {
+    wepy.getStorage({
+      key: 'avatarUrl',
+      success: function(res) {
+        console.log(res.data)
+      }
+    })
+  }
+}
+</script>

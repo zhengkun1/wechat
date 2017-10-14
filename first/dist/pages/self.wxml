@@ -1,0 +1,10 @@
+
+  <view>
+    <view class="background">
+      <image class="circle" src="{{pic}}"/>
+      <view class="name" bindtap="onBack">{{name}}</view>
+    </view>
+    <view class="want">想用</view>
+    <view class="line"/>
+    <view class="want">用过</view>
+  </view>

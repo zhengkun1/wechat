@@ -1,0 +1,32 @@
+
+.big {
+  height: 3rem;
+  width: 3rem;
+  border: 1px solid gainsboro;
+  border-radius: 0.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.direction {
+  display: flex;
+  flex-direction: row;
+  align-items: center
+}
+
+.tx {
+  font-size: 0.7rem;
+}
+
+.tx1 {
+  font-size: 0.6rem;
+  margin-top: 0.1rem;
+}
+.introduction {
+  font-size: 0.7rem;
+  margin-top: 0.5rem;
+}
+.distance {
+  border-top: 0.1rem solid gainsboro;
+  margin-top: 1rem; 
+}

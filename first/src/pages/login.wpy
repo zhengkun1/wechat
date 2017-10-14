@@ -1,0 +1,88 @@
+<style lang="less">
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 25rem;
+  width: 100%
+}
+
+.url {
+  border: 0.1rem solid black;
+  border-radius: 50%;
+  height: 5rem;
+  width: 5rem;
+}
+
+.username {
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.denglu {
+  border: 0.1rem solid whitesmoke;
+  height: 2rem;
+  width: 30%;
+  background-color: greenyellow;
+  margin-top: 1rem;
+}
+
+.shouquan {
+  font-size: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: red
+}
+</style>
+<template>
+  <view class="login">
+    <image class="url" src="{{avatarUrl}}"></image>
+    <view class="username">{{nickName}}</view>
+    <view class="denglu" @tap="onSelf">
+      <view class="shouquan">授权登录</view>
+    </view>
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class Login extends wepy.page {
+  config = {
+
+  }
+  data = {
+    nickName: '',
+    avatarUrl: ''
+  }
+  methods = {
+    onSelf() {
+      wepy.navigateBack({
+        delta: 1
+      })
+      wepy.setStorage({
+        key: 'avatarUrl',
+        data: ''
+      })
+    }
+  }
+  onLoad() {
+    let self = this
+    wepy.getUserInfo({
+      success: function(res) {
+        self.nickName = res.userInfo.nickName
+        self.avatarUrl = res.userInfo.avatarUrl
+      }
+    })
+    wepy.setStorage({
+      key: 'avatarUrl',
+      data: ''
+    })
+    try {
+      wepy.setStorageSync('avatarUrl', self.avatarUrl)
+    } catch (e) {
+    }
+  }
+}
+</script>

@@ -1,0 +1,22 @@
+
+  <view>
+    <view class="direction">
+      <image class="big" src="{{tx}}"/>
+      <view>
+        <view class="tx">腾讯视频</view>
+        <view class="tx1">多人在用的APP</view>
+      </view>
+    </view>
+    <view class="distance">
+      <view style="margin-top: 0.5rem">应用介绍</view>
+      <view class="introduction">这是一款非常好用的看视频的APP，别问我为什么，用过都说好</view>
+    </view>
+    <view class="distance">
+      <view style="margin-top: 0.5rem">系统更新</view>
+      <view class="introduction">新增DOKI星耀榜，快来比拼谁家爱豆最闪耀</view>
+    </view>
+    <view class="distance">
+      <view style="margin-top: 0.5rem">用户评论</view>
+      <view class="introduction"/>
+    </view>
+  </view>

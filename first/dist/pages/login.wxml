@@ -1,0 +1,8 @@
+
+  <view class="login">
+    <image class="url" src="{{avatarUrl}}"/>
+    <view class="username">{{nickName}}</view>
+    <view class="denglu" bindtap="onSelf">
+      <view class="shouquan">授权登录</view>
+    </view>
+  </view>

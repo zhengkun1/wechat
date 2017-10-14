@@ -1,0 +1,238 @@
+<style>
+.first {
+  display: flex;
+  flex-direction: row
+}
+
+.serch {
+  border: 0.1rem solid black;
+  height: 1.5rem;
+  width: 80%;
+  display: flex;
+  flex-direction: row
+}
+
+.button {
+  display: flex;
+  flex-direction: row-right
+}
+
+.new {
+  font-size: 0.7rem;
+  margin-top: 1.3rem;
+  margin-left: 0.7rem;
+}
+
+.view {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.view1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1
+}
+
+.direction {
+  height: 3rem;
+  width: 3rem;
+  margin: 0.7rem;
+}
+
+.word {
+  font-size: 0.6rem;
+}
+
+.gray {
+  height: 0.5rem;
+  width: 100%;
+  background-color: whitesmoke;
+  margin-top: 0.8rem;
+}
+.self {
+  display: flex;
+  /* flex-direction: space-between; */
+  /* justify-content: center; */
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  height: 3rem;
+  width: 100%;
+  background-color: whitesmoke;
+}
+</style>
+<template>
+  <view>
+    <view class="first">
+      <input placeholder="搜索" class="serch" auto-focus/>
+      <button size="mini">搜索</button>
+    </view>
+    <view class="new">
+      <view>HOT APP</view>
+    </view>
+    <view class="view" scroll-x="true" style="width:100%">
+      <view class="view1" @tap="url">
+        <image class="direction" src="{{tx}}"></image>
+        <view class="word">腾讯视频</view>
+      </view>
+      <view class="view1" @tap="qq">
+        <image class="direction" src="{{QQ}}"></image>
+        <view class="word">手机QQ</view>
+      </view>
+      <view class="view1" @tap="qq">
+        <image class="direction" src="{{QQ}}"></image>
+        <view class="word">手机QQ</view>
+      </view>
+      <view class="view1" @tap="qq">
+        <image class="direction" src="{{QQ}}"></image>
+        <view class="word">手机QQ</view>
+      </view>
+    </view>
+    <view class="gray"></view>
+    <view class="new">
+      <view>热聊</view>
+    </view>
+    <view class="view" scroll-x="true" style="width:100%">
+      <view class="view1" @tap="url">
+        <image class="direction" src="{{tx}}"></image>
+        <view class="word">腾讯视频</view>
+      </view>
+      <view class="view1" @tap="qq">
+        <image class="direction" src="{{QQ}}"></image>
+        <view class="word">手机QQ</view>
+      </view>
+      <view class="view1" @tap="qq">
+        <image class="direction" src="{{QQ}}"></image>
+        <view class="word">手机QQ</view>
+      </view>
+      <view class="view1" @tap="qq">
+        <image class="direction" src="{{QQ}}"></image>
+        <view class="word">手机QQ</view>
+      </view>
+    </view>
+    <view class="gray"></view>
+    <view class="new">
+      <view>看视频</view>
+    </view>
+    <view class="view" scroll-x="true" style="width:100%">
+      <view class="view1" @tap="url">
+        <image class="direction" src="{{tx}}"></image>
+        <view class="word">腾讯视频</view>
+      </view>
+      <view class="view1" @tap="qq">
+        <image class="direction" src="{{QQ}}"></image>
+        <view class="word">手机QQ</view>
+      </view>
+      <view class="view1" @tap="qq">
+        <image class="direction" src="{{QQ}}"></image>
+        <view class="word">手机QQ</view>
+      </view>
+      <view class="view1" @tap="qq">
+        <image class="direction" src="{{QQ}}"></image>
+        <view class="word">手机QQ</view>
+      </view>
+    </view>
+    <view class="gray"></view>
+    <view class="new">
+      <view>看直播</view>
+    </view>
+    <view class="view" scroll-x="true" style="width:100%">
+      <view class="view1" @tap="url">
+        <image class="direction" src="{{tx}}"></image>
+        <view class="word">腾讯视频</view>
+      </view>
+      <view class="view1" @tap="qq">
+        <image class="direction" src="{{QQ}}"></image>
+        <view class="word">手机QQ</view>
+      </view>
+      <view class="view1" @tap="qq">
+        <image class="direction" src="{{QQ}}"></image>
+        <view class="word">手机QQ</view>
+      </view>
+      <view class="view1" @tap="qq">
+        <image class="direction" src="{{QQ}}"></image>
+        <view class="word">手机QQ</view>
+      </view>
+    </view>
+    <view class="gray"></view>
+    <view class="new">
+      <view>购物</view>
+    </view>
+    <view class="view" scroll-x="true" style="width:100%">
+      <view class="view1" @tap="url">
+        <image class="direction" src="{{tx}}"></image>
+        <view class="word">腾讯视频</view>
+      </view>
+      <view class="view1" @tap="qq">
+        <image class="direction" src="{{QQ}}"></image>
+        <view class="word">手机QQ</view>
+      </view>
+      <view class="view1" @tap="qq">
+        <image class="direction" src="{{QQ}}"></image>
+        <view class="word">手机QQ</view>
+      </view>
+      <view class="view1" @tap="qq">
+        <image class="direction" src="{{QQ}}"></image>
+        <view class="word">手机QQ</view>
+      </view>
+    </view>
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class First extends wepy.page {
+  config = {
+    navigationBarTitleText: 'test'
+  }
+  data = {
+    focus: false,
+    inputvalue: 'sousuo',
+    tx: '../image/tx.png',
+    QQ: '../image/QQ.png'
+  }
+  methods = {
+    serch() {
+      let self = this
+      self.focus = 'true'
+    },
+    url() {
+      wepy.navigateTo({
+        url: './txtv'
+      })
+    },
+    qq() {
+      wepy.navigateTo({
+        url: './qq'
+      })
+    }
+    bindInput:function(e){  
+     this.setData({  
+       inputValue:e.detail.value  
+     })  
+     console.log('bindInput'+this.data.inputValue)  
+    }
+    setSearchStorage:function(){  
+    let data;  
+    let localStorageValue = [];  
+    if(this.data.inputValue != ''){  
+      //调用API从本地缓存中获取数据  
+      var searchData = wx.getStorageSync('searchData')  
+      searchData.push(this.data.inputValue)  
+      wx.setStorageSync('searchData', searchData)  
+      wx.navigateTo({  
+          url: '../result/result'  
+      })  
+    }else{  
+      console.log('空白的你搜个蛋！')  
+    }
+    // this.onLoad();  
+    }
+  }
+  onLoad() {
+  }
+}
+</script>
