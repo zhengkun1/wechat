@@ -1,9 +1,12 @@
 
   <view>
-    <view class="first">
-      <input placeholder="搜索" class="serch" auto-focus/>
-      <button size="mini">搜索</button>
-    </view>
+    <form catchsubmit="formSubmit" catchreset="formReset">
+      <view class="first">
+        <input placeholder="搜索" name="input" class="serch" auto-focus/>
+        <button type="primary" formType="submit">Submit</button>
+        <button formType="reset">Reset</button>
+      </view>
+    </form>
     <view class="new">
       <view>HOT APP</view>
     </view>

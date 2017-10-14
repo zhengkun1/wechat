@@ -53,6 +53,7 @@
   background-color: whitesmoke;
   margin-top: 0.8rem;
 }
+
 .self {
   display: flex;
   /* flex-direction: space-between; */

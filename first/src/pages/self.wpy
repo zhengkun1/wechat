@@ -71,12 +71,16 @@ export default class Self extends wepy.page {
   }
 
   onShow() {
-    wepy.getStorage({
-      key: 'avatarUrl',
-      success: function(res) {
-        console.log(res.data)
+    let self = this
+    try {
+      let data = wepy.getStorageSync('avatarUrl')
+      let data1 = wepy.getStorageSync('nickName')
+      if (data) {
+        self.pic = data
+        self.name = data1
       }
-    })
+    } catch (err) {
+    }
   }
 }
 </script>

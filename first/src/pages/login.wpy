@@ -58,12 +58,14 @@ export default class Login extends wepy.page {
   }
   methods = {
     onSelf() {
+      let self = this
+      try {
+        wepy.setStorageSync('avatarUrl', self.avatarUrl)
+        wepy.setStorageSync('nickName', self.nickName)
+      } catch (e) {
+      }
       wepy.navigateBack({
         delta: 1
-      })
-      wepy.setStorage({
-        key: 'avatarUrl',
-        data: ''
       })
     }
   }
@@ -75,14 +77,6 @@ export default class Login extends wepy.page {
         self.avatarUrl = res.userInfo.avatarUrl
       }
     })
-    wepy.setStorage({
-      key: 'avatarUrl',
-      data: ''
-    })
-    try {
-      wepy.setStorageSync('avatarUrl', self.avatarUrl)
-    } catch (e) {
-    }
   }
 }
 </script>

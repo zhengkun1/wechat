@@ -53,6 +53,7 @@
   background-color: whitesmoke;
   margin-top: 0.8rem;
 }
+
 .self {
   display: flex;
   /* flex-direction: space-between; */
@@ -67,10 +68,13 @@
 </style>
 <template>
   <view>
-    <view class="first">
-      <input placeholder="搜索" class="serch" auto-focus/>
-      <button size="mini">搜索</button>
-    </view>
+    <form catchsubmit="formSubmit" catchreset="formReset">
+      <view class="first">
+        <input placeholder="搜索" name="input" class="serch" auto-focus/>
+        <button type="primary" formType="submit">Submit</button>
+        <button formType="reset">Reset</button>
+      </view>
+    </form>
     <view class="new">
       <view>HOT APP</view>
     </view>
@@ -192,7 +196,9 @@ export default class First extends wepy.page {
     focus: false,
     inputvalue: 'sousuo',
     tx: '../image/tx.png',
-    QQ: '../image/QQ.png'
+    QQ: '../image/QQ.png',
+    pickerHidden: true,
+    chosen: ''
   }
   methods = {
     serch() {
@@ -208,28 +214,33 @@ export default class First extends wepy.page {
       wepy.navigateTo({
         url: './qq'
       })
-    }
-    bindInput:function(e){  
-     this.setData({  
-       inputValue:e.detail.value  
-     })  
-     console.log('bindInput'+this.data.inputValue)  
-    }
-    setSearchStorage:function(){  
-    let data;  
-    let localStorageValue = [];  
-    if(this.data.inputValue != ''){  
-      //调用API从本地缓存中获取数据  
-      var searchData = wx.getStorageSync('searchData')  
-      searchData.push(this.data.inputValue)  
-      wx.setStorageSync('searchData', searchData)  
-      wx.navigateTo({  
-          url: '../result/result'  
-      })  
-    }else{  
-      console.log('空白的你搜个蛋！')  
-    }
-    // this.onLoad();  
+    },
+    // pickerConfirm(e) {
+    //   this.setData({
+    //     pickerHidden: true
+    //   })
+    //   this.setData({
+    //     chosen: e.detail.value
+    //   })
+    // },
+    // pickerCancel(e) {
+    //   this.setData({
+    //     pickerHidden: true
+    //   })
+    // },
+    // pickerShow(e) {
+    //   this.setData({
+    //     pickerHidden: false
+    //   })
+    // },
+    formSubmit(e) {
+      console.log('form发生了submit事件，携带数据为：', e.detail.value)
+    },
+    formReset(e) {
+      console.log('form发生了reset事件，携带数据为：', e.detail.value)
+      this.setData({
+        chosen: ''
+      })
     }
   }
   onLoad() {
