@@ -22,13 +22,15 @@
   font-size: 0.6rem;
   margin-top: 0.1rem;
 }
+
 .introduction {
   font-size: 0.7rem;
   margin-top: 0.5rem;
 }
+
 .distance {
   border-top: 0.1rem solid gainsboro;
-  margin-top: 1rem; 
+  margin-top: 1rem;
 }
 </style>
 <template>

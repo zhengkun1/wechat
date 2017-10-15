@@ -1,0 +1,22 @@
+
+.input {
+  display: flex;
+  height: 2rem;
+  width: 100%;
+  background-color: greenyellow;
+}
+.serch {
+  height: 1.5rem;
+  width: 63%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  margin-left: 0.2rem;
+  border: 1px solid black;
+}
+.button {
+  font-size: 0.7rem;
+  align-items: center;
+  height: 1.5rem;
+
+}

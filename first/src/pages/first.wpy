@@ -1,15 +1,33 @@
 <style>
 .first {
   display: flex;
-  flex-direction: row
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .serch {
   border: 0.1rem solid black;
   height: 1.5rem;
-  width: 80%;
+  width: 67%;
   display: flex;
-  flex-direction: row
+  flex-direction: row;
+}
+
+.background {
+  background-color: greenyellow;
+  height: 3rem;
+}
+.serch1 {
+  border: 0.1rem solid greenyellow;
+  background-color: white;
+  width:80%;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  color: gray;
 }
 
 .button {
@@ -65,20 +83,25 @@
   width: 100%;
   background-color: whitesmoke;
 }
+
+.serchbutton {
+  font-size: 0.6rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 1.5rem;
+}
 </style>
 <template>
   <view>
-    <form catchsubmit="formSubmit" catchreset="formReset">
-      <view class="first">
-        <input placeholder="搜索" name="input" class="serch" auto-focus/>
-        <button type="primary" formType="submit">Submit</button>
-        <button formType="reset">Reset</button>
-      </view>
-    </form>
+    <view class="first background">
+      <view class="serch1" @tap="serch">🔍       搜索</view>
+    </view>
     <view class="new">
       <view>HOT APP</view>
     </view>
-    <view class="view" scroll-x="true" style="width:100%">
+    <view class="view" scroll-x="true" @scroll="scroll" style="width:100%">
       <view class="view1" @tap="url">
         <image class="direction" src="{{tx}}"></image>
         <view class="word">腾讯视频</view>
@@ -190,20 +213,20 @@
 import wepy from 'wepy'
 export default class First extends wepy.page {
   config = {
-    navigationBarTitleText: 'test'
+    navigationBarTitleText: 'APP'
   }
   data = {
     focus: false,
     inputvalue: 'sousuo',
     tx: '../image/tx.png',
     QQ: '../image/QQ.png',
-    pickerHidden: true,
-    chosen: ''
+    
   }
   methods = {
     serch() {
-      let self = this
-      self.focus = 'true'
+      wepy.navigateTo({
+        url: './serch'
+      })
     },
     url() {
       wepy.navigateTo({
@@ -213,33 +236,6 @@ export default class First extends wepy.page {
     qq() {
       wepy.navigateTo({
         url: './qq'
-      })
-    },
-    // pickerConfirm(e) {
-    //   this.setData({
-    //     pickerHidden: true
-    //   })
-    //   this.setData({
-    //     chosen: e.detail.value
-    //   })
-    // },
-    // pickerCancel(e) {
-    //   this.setData({
-    //     pickerHidden: true
-    //   })
-    // },
-    // pickerShow(e) {
-    //   this.setData({
-    //     pickerHidden: false
-    //   })
-    // },
-    formSubmit(e) {
-      console.log('form发生了submit事件，携带数据为：', e.detail.value)
-    },
-    formReset(e) {
-      console.log('form发生了reset事件，携带数据为：', e.detail.value)
-      this.setData({
-        chosen: ''
       })
     }
   }

@@ -1,16 +1,12 @@
 
   <view>
-    <form catchsubmit="formSubmit" catchreset="formReset">
-      <view class="first">
-        <input placeholder="搜索" name="input" class="serch" auto-focus/>
-        <button type="primary" formType="submit">Submit</button>
-        <button formType="reset">Reset</button>
-      </view>
-    </form>
+    <view class="first background">
+      <view class="serch1" bindtap="serch">🔍       搜索</view>
+    </view>
     <view class="new">
       <view>HOT APP</view>
     </view>
-    <view class="view" scroll-x="true" style="width:100%">
+    <view class="view" scroll-x="true" bindscroll="scroll" style="width:100%">
       <view class="view1" bindtap="url">
         <image class="direction" src="{{tx}}"/>
         <view class="word">腾讯视频</view>

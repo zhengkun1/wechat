@@ -33,12 +33,28 @@
   width: 100%;
   background-color: whitesmoke;
 }
+.login {
+  height: 1rem;
+  width: 100%;
+  background-color: greenyellow;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.login1 {
+  font-size: 0.5rem;
+  margin: 0.5rem
+  
+}
 </style>
 <template>
   <view>
+    <view class="login">
+      <view class="login1" @tap="onBack">登录</view>
+    </view>
     <view class="background">
       <image class="circle" src="{{pic}}"></image>
-      <view class="name" @tap="onBack">{{name}}</view>
+      <view class="name">{{name}}</view>
     </view>
     <view class="want">想用</view>
     <view class="line"></view>
@@ -53,7 +69,7 @@ export default class Self extends wepy.page {
   }
   data = {
     pic: '../image/pic.png',
-    name: '登录'
+    name: ''
   }
   methods = {
     login() {
