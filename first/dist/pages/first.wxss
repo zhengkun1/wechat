@@ -18,10 +18,11 @@
   background-color: greenyellow;
   height: 3rem;
 }
+
 .serch1 {
   border: 0.1rem solid greenyellow;
   background-color: white;
-  width:80%;
+  width: 80%;
   height: 2rem;
   display: flex;
   justify-content: center;
@@ -43,8 +44,8 @@
 
 .view {
   display: flex;
-  align-items: center;
-  white-space: nowrap;
+  flex-direction: row;
+  width: 100%;
 }
 
 .view1 {

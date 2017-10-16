@@ -1,0 +1,22 @@
+
+  <view>
+    <view class="direction">
+      <image class="big" src="{{lz}}"/>
+      <view>
+        <view class="tx">龙珠直播</view>
+        <view class="tx1">非常好用的聊天APP</view>
+      </view>
+    </view>
+    <view class="distance">
+      <view style="margin-top: 0.5rem">应用介绍</view>
+      <view class="introduction">全国13亿人都在用的聊天工具，手机QQ就是牛</view>
+    </view>
+    <view class="distance">
+      <view style="margin-top: 0.5rem">系统更新</view>
+      <view class="introduction">拍摄照片，可按类型挑选挂件、滤镜、体验热门新潮特效；</view>
+    </view>
+    <view class="distance">
+      <view style="margin-top: 0.5rem">用户评论</view>
+      <view class="introduction"/>
+    </view>
+  </view>

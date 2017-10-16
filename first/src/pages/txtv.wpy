@@ -36,8 +36,8 @@
     <view class="direction">
       <image class="big" src="{{tx}}"></image>
       <view>
-        <view class="tx">腾讯视频</view>
-        <view class="tx1">多人在用的APP</view>
+        <view class="tx">{{title}}</view>
+        <view class="tx1">{{desc}}</view>
       </view>
     </view>
     <view class="distance">
@@ -61,9 +61,15 @@ export default class Txtv extends wepy.page {
 
   }
   data = {
-    tx: '../image/tx.png'
+    tx: '../image/tx.png',
+    title: '',
+    desc: ''
   }
-  onload() {
+  onLoad(data) {
+    console.log(data)
+    let self = this
+    self.title = data.title
+    self.desc = data.desc
   }
 }
 

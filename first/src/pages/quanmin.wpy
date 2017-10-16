@@ -1,0 +1,72 @@
+<style>
+.big {
+  height: 3rem;
+  width: 3rem;
+  border: 1px solid gainsboro;
+  border-radius: 0.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.direction {
+  display: flex;
+  flex-direction: row;
+  align-items: center
+}
+
+.tx {
+  font-size: 0.7rem;
+}
+
+.tx1 {
+  font-size: 0.6rem;
+  margin-top: 0.1rem;
+}
+
+.introduction {
+  font-size: 0.7rem;
+  margin-top: 0.5rem;
+}
+
+.distance {
+  border-top: 0.1rem solid gainsboro;
+  margin-top: 1rem;
+}
+</style>
+<template>
+  <view>
+    <view class="direction">
+      <image class="big" src="{{quanmin}}"></image>
+      <view>
+        <view class="tx">全民直播</view>
+        <view class="tx1">非常好用的聊天APP</view>
+      </view>
+    </view>
+    <view class="distance">
+      <view style="margin-top: 0.5rem">应用介绍</view>
+      <view class="introduction">全国13亿人都在用的聊天工具，手机QQ就是牛</view>
+    </view>
+    <view class="distance">
+      <view style="margin-top: 0.5rem">系统更新</view>
+      <view class="introduction">拍摄照片，可按类型挑选挂件、滤镜、体验热门新潮特效；</view>
+    </view>
+    <view class="distance">
+      <view style="margin-top: 0.5rem">用户评论</view>
+      <view class="introduction"></view>
+    </view>
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class Txtv extends wepy.page {
+  config = {
+
+  }
+  data = {
+    quanmin: '../image/quanmin.jpg'
+  }
+  onload() {
+  }
+}
+
+</script>

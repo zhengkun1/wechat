@@ -3,8 +3,8 @@
     <view class="direction">
       <image class="big" src="{{tx}}"/>
       <view>
-        <view class="tx">腾讯视频</view>
-        <view class="tx1">多人在用的APP</view>
+        <view class="tx">{{title}}</view>
+        <view class="tx1">{{desc}}</view>
       </view>
     </view>
     <view class="distance">

@@ -1,115 +1,106 @@
 
   <view>
     <view class="first background">
-      <view class="serch1" bindtap="serch">🔍       搜索</view>
+      <view class="serch1" bindtap="serch">🔍 搜索</view>
     </view>
     <view class="new">
       <view>HOT APP</view>
     </view>
-    <view class="view" scroll-x="true" bindscroll="scroll" style="width:100%">
-      <view class="view1" bindtap="url">
-        <image class="direction" src="{{tx}}"/>
-        <view class="word">腾讯视频</view>
+    <scroll-view scroll-x="true">
+      <view class="view" bindscroll="scroll">
+        <view class="view1" bindtap="url">
+          <image class="direction" src="{{tx}}"/>
+          <view class="word">腾讯视频</view>
+        </view>
+        <view class="view1" bindtap="qq">
+          <image class="direction" src="{{QQ}}"/>
+          <view class="word">手机QQ</view>
+        </view>
+        <view class="view1" bindtap="qq">
+          <image class="direction" src="{{QQ}}"/>
+          <view class="word">手机QQ</view>
+        </view>
+        <view class="view1" bindtap="qq">
+          <image class="direction" src="{{QQ}}"/>
+          <view class="word">手机QQ</view>
+        </view>
+        <view class="view1" bindtap="qq">
+          <image class="direction" src="{{QQ}}"/>
+          <view class="word">手机QQ</view>
+        </view>
+        <view class="view1" bindtap="qq">
+          <image class="direction" src="{{QQ}}"/>
+          <view class="word">手机QQ</view>
+        </view>
       </view>
-      <view class="view1" bindtap="qq">
-        <image class="direction" src="{{QQ}}"/>
-        <view class="word">手机QQ</view>
-      </view>
-      <view class="view1" bindtap="qq">
-        <image class="direction" src="{{QQ}}"/>
-        <view class="word">手机QQ</view>
-      </view>
-      <view class="view1" bindtap="qq">
-        <image class="direction" src="{{QQ}}"/>
-        <view class="word">手机QQ</view>
-      </view>
-    </view>
-    <view class="gray"/>
-    <view class="new">
-      <view>热聊</view>
-    </view>
-    <view class="view" scroll-x="true" style="width:100%">
-      <view class="view1" bindtap="url">
-        <image class="direction" src="{{tx}}"/>
-        <view class="word">腾讯视频</view>
-      </view>
-      <view class="view1" bindtap="qq">
-        <image class="direction" src="{{QQ}}"/>
-        <view class="word">手机QQ</view>
-      </view>
-      <view class="view1" bindtap="qq">
-        <image class="direction" src="{{QQ}}"/>
-        <view class="word">手机QQ</view>
-      </view>
-      <view class="view1" bindtap="qq">
-        <image class="direction" src="{{QQ}}"/>
-        <view class="word">手机QQ</view>
-      </view>
-    </view>
+    </scroll-view>
     <view class="gray"/>
     <view class="new">
       <view>看视频</view>
     </view>
-    <view class="view" scroll-x="true" style="width:100%">
-      <view class="view1" bindtap="url">
-        <image class="direction" src="{{tx}}"/>
-        <view class="word">腾讯视频</view>
+    <scroll-view scroll-x="true">
+      <view class="view" bindscroll="scroll">
+        <view  wx:for="{{content}}" wx:key="index" class="view1" bindtap="url" id="{{index}}">
+          <image class="direction" src="{{item.icon}}"/>
+          <view class="word">{{item.title}}</view>
+        </view>
+        <!-- <view class="view1" bindtap="url">
+          <image class="direction" src="{{tx}}"></image>
+          <view class="word">腾讯视频</view>
+        </view>
+        <view class="view1" bindtap="aiqiyi">
+          <image class="direction" src="{{aiqiyi}}"></image>
+          <view class="word">爱奇艺</view>
+        </view>
+        <view class="view1" bindtap="leshi">
+          <image class="direction" src="{{leshi}}"></image>
+          <view class="word">乐视视频</view>
+        </view>
+        <view class="view1" bindtap="youku">
+          <image class="direction" src="{{youku}}"></image>
+          <view class="word">优酷</view>
+        </view>
+        <view class="view1" bindtap="souhu">
+          <image class="direction" src="{{souhu}}"></image>
+          <view class="word">搜狐视频</view>
+        </view>
+        <view class="view1" bindtap="bf">
+          <image class="direction" src="{{bf}}"></image>
+          <view class="word">暴风影音</view>
+        </view> -->
       </view>
-      <view class="view1" bindtap="qq">
-        <image class="direction" src="{{QQ}}"/>
-        <view class="word">手机QQ</view>
-      </view>
-      <view class="view1" bindtap="qq">
-        <image class="direction" src="{{QQ}}"/>
-        <view class="word">手机QQ</view>
-      </view>
-      <view class="view1" bindtap="qq">
-        <image class="direction" src="{{QQ}}"/>
-        <view class="word">手机QQ</view>
-      </view>
-    </view>
+    </scroll-view>
     <view class="gray"/>
     <view class="new">
       <view>看直播</view>
     </view>
-    <view class="view" scroll-x="true" style="width:100%">
-      <view class="view1" bindtap="url">
-        <image class="direction" src="{{tx}}"/>
-        <view class="word">腾讯视频</view>
+    <scroll-view scroll-x="true">
+      <view class="view" bindscroll="scroll">
+        <view class="view1" bindtap="huya">
+          <image class="direction" src="{{huya}}"/>
+          <view class="word">虎牙直播</view>
+        </view>
+        <view class="view1" bindtap="panda">
+          <image class="direction" src="{{panda}}"/>
+          <view class="word">熊猫直播</view>
+        </view>
+        <view class="view1" bindtap="twitch">
+          <image class="direction" src="{{twitch}}"/>
+          <view class="word">Twitch</view>
+        </view>
+        <view class="view1" bindtap="longzhu">
+          <image class="direction" src="{{longzhu}}"/>
+          <view class="word">龙珠直播</view>
+        </view>
+        <view class="view1" bindtap="douyu">
+          <image class="direction" src="{{douyu}}"/>
+          <view class="word">斗鱼直播</view>
+        </view>
+        <view class="view1" bindtap="quanmin">
+          <image class="direction" src="{{quanmin}}"/>
+          <view class="word">全民直播</view>
+        </view>
       </view>
-      <view class="view1" bindtap="qq">
-        <image class="direction" src="{{QQ}}"/>
-        <view class="word">手机QQ</view>
-      </view>
-      <view class="view1" bindtap="qq">
-        <image class="direction" src="{{QQ}}"/>
-        <view class="word">手机QQ</view>
-      </view>
-      <view class="view1" bindtap="qq">
-        <image class="direction" src="{{QQ}}"/>
-        <view class="word">手机QQ</view>
-      </view>
-    </view>
+    </scroll-view>
     <view class="gray"/>
-    <view class="new">
-      <view>购物</view>
-    </view>
-    <view class="view" scroll-x="true" style="width:100%">
-      <view class="view1" bindtap="url">
-        <image class="direction" src="{{tx}}"/>
-        <view class="word">腾讯视频</view>
-      </view>
-      <view class="view1" bindtap="qq">
-        <image class="direction" src="{{QQ}}"/>
-        <view class="word">手机QQ</view>
-      </view>
-      <view class="view1" bindtap="qq">
-        <image class="direction" src="{{QQ}}"/>
-        <view class="word">手机QQ</view>
-      </view>
-      <view class="view1" bindtap="qq">
-        <image class="direction" src="{{QQ}}"/>
-        <view class="word">手机QQ</view>
-      </view>
-    </view>
   </view>

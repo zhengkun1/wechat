@@ -18,10 +18,11 @@
   background-color: greenyellow;
   height: 3rem;
 }
+
 .serch1 {
   border: 0.1rem solid greenyellow;
   background-color: white;
-  width:80%;
+  width: 80%;
   height: 2rem;
   display: flex;
   justify-content: center;
@@ -43,8 +44,8 @@
 
 .view {
   display: flex;
-  align-items: center;
-  white-space: nowrap;
+  flex-direction: row;
+  width: 100%;
 }
 
 .view1 {
@@ -96,121 +97,113 @@
 <template>
   <view>
     <view class="first background">
-      <view class="serch1" @tap="serch">🔍       搜索</view>
+      <view class="serch1" @tap="serch">🔍 搜索</view>
     </view>
     <view class="new">
       <view>HOT APP</view>
     </view>
-    <view class="view" scroll-x="true" @scroll="scroll" style="width:100%">
-      <view class="view1" @tap="url">
-        <image class="direction" src="{{tx}}"></image>
-        <view class="word">腾讯视频</view>
+    <scroll-view scroll-x="true">
+      <view class="view" bindscroll="scroll">
+        <view class="view1" @tap="url">
+          <image class="direction" src="{{tx}}"></image>
+          <view class="word">腾讯视频</view>
+        </view>
+        <view class="view1" @tap="qq">
+          <image class="direction" src="{{QQ}}"></image>
+          <view class="word">手机QQ</view>
+        </view>
+        <view class="view1" @tap="qq">
+          <image class="direction" src="{{QQ}}"></image>
+          <view class="word">手机QQ</view>
+        </view>
+        <view class="view1" @tap="qq">
+          <image class="direction" src="{{QQ}}"></image>
+          <view class="word">手机QQ</view>
+        </view>
+        <view class="view1" @tap="qq">
+          <image class="direction" src="{{QQ}}"></image>
+          <view class="word">手机QQ</view>
+        </view>
+        <view class="view1" @tap="qq">
+          <image class="direction" src="{{QQ}}"></image>
+          <view class="word">手机QQ</view>
+        </view>
       </view>
-      <view class="view1" @tap="qq">
-        <image class="direction" src="{{QQ}}"></image>
-        <view class="word">手机QQ</view>
-      </view>
-      <view class="view1" @tap="qq">
-        <image class="direction" src="{{QQ}}"></image>
-        <view class="word">手机QQ</view>
-      </view>
-      <view class="view1" @tap="qq">
-        <image class="direction" src="{{QQ}}"></image>
-        <view class="word">手机QQ</view>
-      </view>
-    </view>
-    <view class="gray"></view>
-    <view class="new">
-      <view>热聊</view>
-    </view>
-    <view class="view" scroll-x="true" style="width:100%">
-      <view class="view1" @tap="url">
-        <image class="direction" src="{{tx}}"></image>
-        <view class="word">腾讯视频</view>
-      </view>
-      <view class="view1" @tap="qq">
-        <image class="direction" src="{{QQ}}"></image>
-        <view class="word">手机QQ</view>
-      </view>
-      <view class="view1" @tap="qq">
-        <image class="direction" src="{{QQ}}"></image>
-        <view class="word">手机QQ</view>
-      </view>
-      <view class="view1" @tap="qq">
-        <image class="direction" src="{{QQ}}"></image>
-        <view class="word">手机QQ</view>
-      </view>
-    </view>
+    </scroll-view>
     <view class="gray"></view>
     <view class="new">
       <view>看视频</view>
     </view>
-    <view class="view" scroll-x="true" style="width:100%">
-      <view class="view1" @tap="url">
-        <image class="direction" src="{{tx}}"></image>
-        <view class="word">腾讯视频</view>
+    <scroll-view scroll-x="true">
+      <view class="view" bindscroll="scroll">
+        <view wx:for="{{content}}" wx:key="index" class="view1" @tap="url" id="{{index}}">
+          <image class="direction" src="{{item.icon}}"></image>
+          <view class="word">{{item.title}}</view>
+        </view>
+        <!-- <view class="view1" @tap="url">
+          <image class="direction" src="{{tx}}"></image>
+          <view class="word">腾讯视频</view>
+        </view>
+        <view class="view1" @tap="aiqiyi">
+          <image class="direction" src="{{aiqiyi}}"></image>
+          <view class="word">爱奇艺</view>
+        </view>
+        <view class="view1" @tap="leshi">
+          <image class="direction" src="{{leshi}}"></image>
+          <view class="word">乐视视频</view>
+        </view>
+        <view class="view1" @tap="youku">
+          <image class="direction" src="{{youku}}"></image>
+          <view class="word">优酷</view>
+        </view>
+        <view class="view1" @tap="souhu">
+          <image class="direction" src="{{souhu}}"></image>
+          <view class="word">搜狐视频</view>
+        </view>
+        <view class="view1" @tap="bf">
+          <image class="direction" src="{{bf}}"></image>
+          <view class="word">暴风影音</view>
+        </view> -->
       </view>
-      <view class="view1" @tap="qq">
-        <image class="direction" src="{{QQ}}"></image>
-        <view class="word">手机QQ</view>
-      </view>
-      <view class="view1" @tap="qq">
-        <image class="direction" src="{{QQ}}"></image>
-        <view class="word">手机QQ</view>
-      </view>
-      <view class="view1" @tap="qq">
-        <image class="direction" src="{{QQ}}"></image>
-        <view class="word">手机QQ</view>
-      </view>
-    </view>
+    </scroll-view>
     <view class="gray"></view>
     <view class="new">
       <view>看直播</view>
     </view>
-    <view class="view" scroll-x="true" style="width:100%">
-      <view class="view1" @tap="url">
-        <image class="direction" src="{{tx}}"></image>
-        <view class="word">腾讯视频</view>
+    <scroll-view scroll-x="true">
+      <view class="view" bindscroll="scroll">
+        <view class="view1" @tap="huya">
+          <image class="direction" src="{{huya}}"></image>
+          <view class="word">虎牙直播</view>
+        </view>
+        <view class="view1" @tap="panda">
+          <image class="direction" src="{{panda}}"></image>
+          <view class="word">熊猫直播</view>
+        </view>
+        <view class="view1" @tap="twitch">
+          <image class="direction" src="{{twitch}}"></image>
+          <view class="word">Twitch</view>
+        </view>
+        <view class="view1" @tap="longzhu">
+          <image class="direction" src="{{longzhu}}"></image>
+          <view class="word">龙珠直播</view>
+        </view>
+        <view class="view1" @tap="douyu">
+          <image class="direction" src="{{douyu}}"></image>
+          <view class="word">斗鱼直播</view>
+        </view>
+        <view class="view1" @tap="quanmin">
+          <image class="direction" src="{{quanmin}}"></image>
+          <view class="word">全民直播</view>
+        </view>
       </view>
-      <view class="view1" @tap="qq">
-        <image class="direction" src="{{QQ}}"></image>
-        <view class="word">手机QQ</view>
-      </view>
-      <view class="view1" @tap="qq">
-        <image class="direction" src="{{QQ}}"></image>
-        <view class="word">手机QQ</view>
-      </view>
-      <view class="view1" @tap="qq">
-        <image class="direction" src="{{QQ}}"></image>
-        <view class="word">手机QQ</view>
-      </view>
-    </view>
+    </scroll-view>
     <view class="gray"></view>
-    <view class="new">
-      <view>购物</view>
-    </view>
-    <view class="view" scroll-x="true" style="width:100%">
-      <view class="view1" @tap="url">
-        <image class="direction" src="{{tx}}"></image>
-        <view class="word">腾讯视频</view>
-      </view>
-      <view class="view1" @tap="qq">
-        <image class="direction" src="{{QQ}}"></image>
-        <view class="word">手机QQ</view>
-      </view>
-      <view class="view1" @tap="qq">
-        <image class="direction" src="{{QQ}}"></image>
-        <view class="word">手机QQ</view>
-      </view>
-      <view class="view1" @tap="qq">
-        <image class="direction" src="{{QQ}}"></image>
-        <view class="word">手机QQ</view>
-      </view>
-    </view>
   </view>
 </template>
 <script>
 import wepy from 'wepy'
+import content from '../util/content.js'
 export default class First extends wepy.page {
   config = {
     navigationBarTitleText: 'APP'
@@ -219,8 +212,19 @@ export default class First extends wepy.page {
     focus: false,
     inputvalue: 'sousuo',
     tx: '../image/tx.png',
-    QQ: '../image/QQ.png',
-    
+    QQ: '../image/phone qq.png',
+    aiqiyi: '../image/aiqiyi.png',
+    leshi: '../image/leshi.png',
+    youku: '../image/youku.png',
+    souhu: '../image/souhu.png',
+    bf: '../image/baofengyingyin.png',
+    quanmin: '../image/quanmin.jpg',
+    panda: '../image/panda.jpg',
+    huya: '../image/huya.png',
+    twitch: '../image/twitch.png',
+    douyu: '../image/douyu.png',
+    longzhu: '../image/longzhu.jpg',
+    content: null
   }
   methods = {
     serch() {
@@ -228,18 +232,80 @@ export default class First extends wepy.page {
         url: './serch'
       })
     },
-    url() {
+    url(e) {
+      let self = this
+      let item = self.content[e.currentTarget.id]
       wepy.navigateTo({
-        url: './txtv'
+        url: `./txtv?title=${item.title}&desc=${item.desc}`
       })
     },
     qq() {
       wepy.navigateTo({
         url: './qq'
       })
+    },
+    aiqiyi() {
+      wepy.navigateTo({
+        url: './aiqiyi'
+      })
+    },
+    leshi() {
+      wepy.navigateTo({
+        url: './leshi'
+      })
+    },
+    youku() {
+      wepy.navigateTo({
+        url: './youku'
+      })
+    },
+    souhu() {
+      wepy.navigateTo({
+        url: './souhu'
+      })
+    },
+    bf() {
+      wepy.navigateTo({
+        url: './bf'
+      })
+    },
+    quanmin() {
+      wepy.navigateTo({
+        url: './quanmin'
+      })
+    },
+    huya() {
+      wepy.navigateTo({
+        url: './huya'
+      })
+    },
+    twitch() {
+      wepy.navigateTo({
+        url: './twitch'
+      })
+    },
+    panda() {
+      wepy.navigateTo({
+        url: './panda'
+      })
+    },
+    douyu() {
+      wepy.navigateTo({
+        url: './douyu'
+      })
+    },
+    longzhu() {
+      wepy.navigateTo({
+        url: './longzhu'
+      })
+    },
+    scroll(e) {
+      console.log(e)
     }
   }
   onLoad() {
+    let self = this
+    self.content = content
   }
 }
 </script>

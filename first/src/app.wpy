@@ -22,7 +22,18 @@ export default class extends wepy.app {
       'pages/qq',
       'pages/self',
       'pages/login',
-      'pages/serch'
+      'pages/serch',
+      'pages/aiqiyi',
+      'pages/leshi',
+      'pages/youku',
+      'pages/souhu',
+      'pages/bf',
+      'pages/douyu',
+      'pages/huya',
+      'pages/longzhu',
+      'pages/panda',
+      'pages/twitch',
+      'pages/quanmin'
     ],
     window: {
       backgroundTextStyle: 'light',
