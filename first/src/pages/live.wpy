@@ -1,0 +1,10 @@
+<style></style>
+<template>
+<view>222222</view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class Live extends wepy.page {
+
+}
+</script>

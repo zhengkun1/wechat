@@ -11,6 +11,7 @@
       <view class="wantborder" bindtap="collect">想用</view>
       <view class="wantborder" bindtap="collection">用过</view>
     </view>
+
     <view class="distance">
       <view style="margin-top: 0.5rem">应用介绍</view>
       <view class="introduction">{{introduce}}</view>

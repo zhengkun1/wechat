@@ -22,11 +22,29 @@
   font-size: 0.6rem;
   margin-top: 0.1rem;
 }
+
 .introduction {
   font-size: 0.7rem;
   margin-top: 0.5rem;
 }
+
 .distance {
   border-top: 0.1rem solid gainsboro;
-  margin-top: 1rem; 
+  margin-top: 1rem;
+}
+
+.want {
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+}
+
+.wantborder {
+  border: 1px solid gold;
+  border-radius: 0.5rem;
+  padding: 0.3rem;
+  background-color: gold;
+  margin-right: 1rem;
+  color: ghostwhite;
+  font-size: 0.8rem;
 }

@@ -37,6 +37,8 @@
 }
 
 .new {
+  display: flex;
+  justify-content: space-between;
   font-size: 0.7rem;
   margin-top: 1.3rem;
   margin-left: 0.7rem;
@@ -93,6 +95,9 @@
   align-items: center;
   height: 1.5rem;
 }
+.more {
+  margin-right: 1rem;
+}
 </style>
 <template>
   <view>
@@ -104,35 +109,16 @@
     </view>
     <scroll-view scroll-x="true">
       <view class="view" bindscroll="scroll">
-        <view class="view1" @tap="url">
-          <image class="direction" src="{{tx}}"></image>
-          <view class="word">腾讯视频</view>
-        </view>
-        <view class="view1" @tap="qq">
-          <image class="direction" src="{{QQ}}"></image>
-          <view class="word">手机QQ</view>
-        </view>
-        <view class="view1" @tap="qq">
-          <image class="direction" src="{{QQ}}"></image>
-          <view class="word">手机QQ</view>
-        </view>
-        <view class="view1" @tap="qq">
-          <image class="direction" src="{{QQ}}"></image>
-          <view class="word">手机QQ</view>
-        </view>
-        <view class="view1" @tap="qq">
-          <image class="direction" src="{{QQ}}"></image>
-          <view class="word">手机QQ</view>
-        </view>
-        <view class="view1" @tap="qq">
-          <image class="direction" src="{{QQ}}"></image>
-          <view class="word">手机QQ</view>
+        <view wx:for="{{contents}}" wx:key="index" class="view1" @tap="hot" id="{{index}}">
+          <image class="direction" src="{{item.icon}}"></image>
+          <view class="word">{{item.title}}</view>
         </view>
       </view>
     </scroll-view>
     <view class="gray"></view>
     <view class="new">
       <view>看视频</view>
+      <view class="more" @tap="video" style="color: greenyellow">更多</view>
     </view>
     <scroll-view scroll-x="true">
       <view class="view" bindscroll="scroll">
@@ -140,61 +126,18 @@
           <image class="direction" src="{{item.icon}}"></image>
           <view class="word">{{item.title}}</view>
         </view>
-        <!-- <view class="view1" @tap="url">
-          <image class="direction" src="{{tx}}"></image>
-          <view class="word">腾讯视频</view>
-        </view>
-        <view class="view1" @tap="aiqiyi">
-          <image class="direction" src="{{aiqiyi}}"></image>
-          <view class="word">爱奇艺</view>
-        </view>
-        <view class="view1" @tap="leshi">
-          <image class="direction" src="{{leshi}}"></image>
-          <view class="word">乐视视频</view>
-        </view>
-        <view class="view1" @tap="youku">
-          <image class="direction" src="{{youku}}"></image>
-          <view class="word">优酷</view>
-        </view>
-        <view class="view1" @tap="souhu">
-          <image class="direction" src="{{souhu}}"></image>
-          <view class="word">搜狐视频</view>
-        </view>
-        <view class="view1" @tap="bf">
-          <image class="direction" src="{{bf}}"></image>
-          <view class="word">暴风影音</view>
-        </view> -->
       </view>
     </scroll-view>
     <view class="gray"></view>
     <view class="new">
       <view>看直播</view>
+      <view class="more" @tap="live" style="color: greenyellow">更多</view>
     </view>
     <scroll-view scroll-x="true">
       <view class="view" bindscroll="scroll">
-        <view class="view1" @tap="huya">
-          <image class="direction" src="{{huya}}"></image>
-          <view class="word">虎牙直播</view>
-        </view>
-        <view class="view1" @tap="panda">
-          <image class="direction" src="{{panda}}"></image>
-          <view class="word">熊猫直播</view>
-        </view>
-        <view class="view1" @tap="twitch">
-          <image class="direction" src="{{twitch}}"></image>
-          <view class="word">Twitch</view>
-        </view>
-        <view class="view1" @tap="longzhu">
-          <image class="direction" src="{{longzhu}}"></image>
-          <view class="word">龙珠直播</view>
-        </view>
-        <view class="view1" @tap="douyu">
-          <image class="direction" src="{{douyu}}"></image>
-          <view class="word">斗鱼直播</view>
-        </view>
-        <view class="view1" @tap="quanmin">
-          <image class="direction" src="{{quanmin}}"></image>
-          <view class="word">全民直播</view>
+        <view wx:for="{{content1}}" wx:key="index" class="view1" @tap="panda" id="{{index}}">
+          <image class="direction" src="{{item.icon}}"></image>
+          <view class="word">{{item.title}}</view>
         </view>
       </view>
     </scroll-view>
@@ -204,6 +147,8 @@
 <script>
 import wepy from 'wepy'
 import content from '../util/content.js'
+import content1 from '../util/content1.js'
+import contents from '../util/contents.js'
 export default class First extends wepy.page {
   config = {
     navigationBarTitleText: 'APP'
@@ -211,20 +156,9 @@ export default class First extends wepy.page {
   data = {
     focus: false,
     inputvalue: 'sousuo',
-    tx: '../image/tx.png',
-    QQ: '../image/phone qq.png',
-    aiqiyi: '../image/aiqiyi.png',
-    leshi: '../image/leshi.png',
-    youku: '../image/youku.png',
-    souhu: '../image/souhu.png',
-    bf: '../image/baofengyingyin.png',
-    quanmin: '../image/quanmin.jpg',
-    panda: '../image/panda.jpg',
-    huya: '../image/huya.png',
-    twitch: '../image/twitch.png',
-    douyu: '../image/douyu.png',
-    longzhu: '../image/longzhu.jpg',
-    content: null
+    content: null,
+    content1: null,
+    contents: null
   }
   methods = {
     serch() {
@@ -232,71 +166,36 @@ export default class First extends wepy.page {
         url: './serch'
       })
     },
+    video() {
+      wepy.navigateTo({
+        url: './video'
+      })
+    },
+    live() {
+      wepy.navigateTo({
+        url: './live'
+      })
+    },
     url(e) {
       let self = this
       let item = self.content[e.currentTarget.id]
       wepy.navigateTo({
-        url: `./txtv?title=${item.title}&desc=${item.desc}`
+        url: `./txtv?title=${item.title}&desc=${item.desc}&icon=${item.icon}&introduce=${item.introduce}&update=${item.update}`
       })
     },
-    qq() {
+    hot(e) {
+      let self = this
+      let item = self.contents[e.currentTarget.id]
       wepy.navigateTo({
-        url: './qq'
+        url: `./hot?title=${item.title}&desc=${item.desc}&icon=${item.icon}&introduce=${item.introduce}&update=${item.update}`
       })
     },
-    aiqiyi() {
+    panda(e) {
+      let self = this
+      let item = self.content1[e.currentTarget.id]
+      console.log(item)
       wepy.navigateTo({
-        url: './aiqiyi'
-      })
-    },
-    leshi() {
-      wepy.navigateTo({
-        url: './leshi'
-      })
-    },
-    youku() {
-      wepy.navigateTo({
-        url: './youku'
-      })
-    },
-    souhu() {
-      wepy.navigateTo({
-        url: './souhu'
-      })
-    },
-    bf() {
-      wepy.navigateTo({
-        url: './bf'
-      })
-    },
-    quanmin() {
-      wepy.navigateTo({
-        url: './quanmin'
-      })
-    },
-    huya() {
-      wepy.navigateTo({
-        url: './huya'
-      })
-    },
-    twitch() {
-      wepy.navigateTo({
-        url: './twitch'
-      })
-    },
-    panda() {
-      wepy.navigateTo({
-        url: './panda'
-      })
-    },
-    douyu() {
-      wepy.navigateTo({
-        url: './douyu'
-      })
-    },
-    longzhu() {
-      wepy.navigateTo({
-        url: './longzhu'
+        url: `./panda?title=${item.title}&desc=${item.desc}&icon=${item.icon}&introduce=${item.introduce}&update=${item.update}`
       })
     },
     scroll(e) {
@@ -306,6 +205,8 @@ export default class First extends wepy.page {
   onLoad() {
     let self = this
     self.content = content
+    self.content1 = content1
+    self.contents = contents
   }
 }
 </script>

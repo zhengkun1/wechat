@@ -33,6 +33,7 @@
   width: 100%;
   background-color: whitesmoke;
 }
+
 .login {
   height: 1rem;
   width: 100%;
@@ -41,24 +42,47 @@
   justify-content: flex-end;
   align-items: center;
 }
+
 .login1 {
   font-size: 0.5rem;
   margin: 0.5rem
-  
+}
+
+.big {
+  height: 3rem;
+  width: 3rem;
+  border: 1px solid white;
+  border-radius: 0.5rem; // margin-left: 1rem;
+  // margin-right: 1rem;
+}
+
+.collection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; // align-items: center;
+  margin: 1rem;
 }
 </style>
 <template>
   <view>
     <view class="login">
-      <view class="login1" @tap="onBack">登录</view>
+      <view class="login1" @tap="onBack">{{_login}}</view>
     </view>
     <view class="background">
       <image class="circle" src="{{pic}}"></image>
       <view class="name">{{name}}</view>
     </view>
     <view class="want">想用</view>
+    <view class="collection">
+      <image class="big" src="{{icon}}"></image>
+      <view style="font-size: 0.8rem">{{title}}</view>
+    </view>
     <view class="line"></view>
     <view class="want">用过</view>
+    <view class="collection">
+      <image class="big" src="{{_icon}}"></image>
+      <view style="font-size: 0.8rem">{{_title}}</view>
+    </view>
   </view>
 </template>
 <script>
@@ -68,14 +92,21 @@ export default class Self extends wepy.page {
 
   }
   data = {
+    _login: '登录',
     pic: '../image/pic.png',
-    name: ''
+    name: '',
+    icon: '',
+    title: '',
+    _icon: '',
+    _title: ''
   }
   methods = {
     login() {
       let self = this
       self.pic = 'avatarUrl'
       self.name = 'name'
+      self.icon = 'icon'
+      self.title = 'title'
     },
     onBack() {
       wepy.navigateTo({
@@ -89,11 +120,34 @@ export default class Self extends wepy.page {
   onShow() {
     let self = this
     try {
+      let array = wepy.getStorageSync('arr')
+      if (array) {
+        array.push({
+          icon: '',
+          title: ''
+        })
+      } else {
+        let arr = [
+          {
+            icon: '',
+            title: ''
+          }
+        ]
+        wepy.setStorageSync('arr', arr)
+      }
       let data = wepy.getStorageSync('avatarUrl')
       let data1 = wepy.getStorageSync('nickName')
+      let data2 = wepy.getStorageSync('icon')
+      let data3 = wepy.getStorageSync('title')
+      let _icon = wepy.getStorageSync('_icon')
+      let _title = wepy.getStorageSync('_title')
       if (data) {
         self.pic = data
         self.name = data1
+        self.icon = data2
+        self.title = data3
+        self._icon = _icon
+        self._title = _title
       }
     } catch (err) {
     }

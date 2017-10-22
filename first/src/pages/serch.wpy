@@ -5,6 +5,7 @@
   width: 100%;
   background-color: greenyellow;
 }
+
 .serch {
   height: 1.5rem;
   width: 63%;
@@ -14,17 +15,17 @@
   margin-left: 0.2rem;
   border: 1px solid black;
 }
+
 .button {
   font-size: 0.7rem;
   align-items: center;
   height: 1.5rem;
-
 }
 </style>
 <template>
   <form bindsubmit="formSubmit" bindreset="formReset">
     <view class="input">
-      <input class="serch" placeholder="搜索" name="input" auto-focous/>
+      <input class="serch" placeholder="搜索" name="10k" auto-focous/>
       <button class="button" formType="submit">搜索</button>
       <button class="button" formType="reset">清空内容</button>
     </view>
@@ -50,7 +51,7 @@ export default class Serch extends wepy.page {
     }
   }
 
-  onLoad = {
+  onLoad() {
   }
 }
 </script>

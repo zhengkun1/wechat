@@ -19,21 +19,13 @@ export default class extends wepy.app {
       'pages/first',
       'pages/index',
       'pages/txtv',
-      'pages/qq',
+      'pages/hot',
       'pages/self',
       'pages/login',
       'pages/serch',
-      'pages/aiqiyi',
-      'pages/leshi',
-      'pages/youku',
-      'pages/souhu',
-      'pages/bf',
-      'pages/douyu',
-      'pages/huya',
-      'pages/longzhu',
       'pages/panda',
-      'pages/twitch',
-      'pages/quanmin'
+      'pages/video',
+      'pages/live'
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -43,18 +35,18 @@ export default class extends wepy.app {
     },
     tabBar: {
       color: '#000000',
-      selectedColor: '#FFFFFF',
-      backgroundColor: '#8CEA00',
+      selectedColor: '#8CEA00',
+      // backgroundColor: '#8CEA00',
       list: [{
         pagePath: 'pages/first',
         text: '首页',
-        iconPath: 'image/main.png',
-        selectedIconPath: 'image/main.png'
+        iconPath: 'image/mainB.png',
+        selectedIconPath: 'image/maing.png'
       }, {
         pagePath: 'pages/self',
         text: '个人',
-        iconPath: 'image/self.png',
-        selectedIconPath: 'image/self.png'
+        iconPath: 'image/myselfb.png',
+        selectedIconPath: 'image/myselfg.png'
       }]
     }
   }

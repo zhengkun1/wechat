@@ -62,6 +62,7 @@
       <view class="wantborder" @tap="collect">想用</view>
       <view class="wantborder" @tap="collection">用过</view>
     </view>
+
     <view class="distance">
       <view style="margin-top: 0.5rem">应用介绍</view>
       <view class="introduction">{{introduce}}</view>
@@ -78,7 +79,7 @@
 </template>
 <script>
 import wepy from 'wepy'
-export default class Panda extends wepy.page {
+export default class Hot extends wepy.page {
   config = {
 
   }
@@ -108,7 +109,6 @@ export default class Panda extends wepy.page {
     }
   }
   onLoad(data) {
-    console.log(data)
     let self = this
     self.title = data.title
     self.icon = data.icon

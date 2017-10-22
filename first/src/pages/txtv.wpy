@@ -22,31 +22,53 @@
   font-size: 0.6rem;
   margin-top: 0.1rem;
 }
+
 .introduction {
   font-size: 0.7rem;
   margin-top: 0.5rem;
 }
+
 .distance {
   border-top: 0.1rem solid gainsboro;
-  margin-top: 1rem; 
+  margin-top: 1rem;
+}
+
+.want {
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+}
+
+.wantborder {
+  border: 1px solid gold;
+  border-radius: 0.5rem;
+  padding: 0.3rem;
+  background-color: gold;
+  margin-right: 1rem;
+  color: ghostwhite;
+  font-size: 0.8rem;
 }
 </style>
 <template>
   <view>
     <view class="direction">
-      <image class="big" src="{{tx}}"></image>
+      <image class="big" src="{{icon}}"></image>
       <view>
         <view class="tx">{{title}}</view>
         <view class="tx1">{{desc}}</view>
       </view>
     </view>
+    <view class="want">
+      <view class="wantborder" @tap="collect">想用</view>
+      <view class="wantborder" @tap="collection">用过</view>
+    </view>
     <view class="distance">
       <view style="margin-top: 0.5rem">应用介绍</view>
-      <view class="introduction">这是一款非常好用的看视频的APP，别问我为什么，用过都说好</view>
+      <view class="introduction">{{introduce}}</view>
     </view>
     <view class="distance">
       <view style="margin-top: 0.5rem">系统更新</view>
-      <view class="introduction">新增DOKI星耀榜，快来比拼谁家爱豆最闪耀</view>
+      <view class="introduction">{{update}}</view>
     </view>
     <view class="distance">
       <view style="margin-top: 0.5rem">用户评论</view>
@@ -61,15 +83,38 @@ export default class Txtv extends wepy.page {
 
   }
   data = {
-    tx: '../image/tx.png',
+    icon: '',
     title: '',
-    desc: ''
+    desc: '',
+    introduce: '',
+    update: ''
+  }
+  methods = {
+    collect() {
+      let self = this
+      try {
+        wepy.setStorageSync('icon', self.icon)
+        wepy.setStorageSync('title', self.title)
+      } catch (e) {
+      }
+    },
+    collection() {
+      let self = this 
+      try {
+        wepy.setStorageSync('_icon', self.icon)
+        wepy.setStorageSync('_title', self.title)
+      } catch (e) {
+      }
+    }
   }
   onLoad(data) {
     console.log(data)
     let self = this
     self.title = data.title
     self.desc = data.desc
+    self.icon = data.icon
+    self.introduce = data.introduce
+    self.update = data.update
   }
 }
 

@@ -1,0 +1,40 @@
+'use strict';
+
+module.exports = [{
+  title: '全民直播',
+  icon: '../image/quanmin.png',
+  desc: '让年轻人爱看的直播。',
+  introduce: '全民直播，做年轻人爱看的直播。',
+  update: '【优化】 游戏中心优化，玩游戏更顺畅'
+}, {
+  title: '优酷',
+  icon: '../image/youku.png',
+  desc: '非常好用的视频APP',
+  introduce: '《将军在上》女才男貌，逗趣良缘，优酷热播',
+  update: '“会员中心”定制皮肤全新上线，参与活动获得限量皮肤，装扮你的个人主页'
+}, {
+  title: '熊猫TV',
+  icon: '../image/panda.png',
+  desc: '非常好用的看直播软件',
+  introduce: '快乐尽在熊猫直播，云集LOL、Dota2、炉石传说等游戏当红明星主播，24小时内容不打烊',
+  update: '熊猫两周年盛典即将开启'
+}, {
+  title: 'Twitch',
+  icon: '../image/twitch.png',
+  desc: '需要VPN',
+  introduce: '全世界的直播都在这里',
+  update: '不需要更新，一直很6.'
+}, {
+  title: '腾讯视频',
+  icon: '../image/tx.png',
+  desc: '海量视频，等你来看',
+  introduce: '精彩内容，现在就要',
+  update: '优化浏览体验，提升页面加载速度。'
+}, {
+  title: '手机QQ',
+  icon: '../image/qq1.png',
+  desc: '乐在沟通17年，聊天欢乐9亿人',
+  introduce: '服务超过百分之九十的移动互联网用户',
+  update: '拍摄照片/短视频时，可按类型挑选挂件、滤镜，体验热门新潮特效；'
+}];
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbnRlbnRzLmpzIl0sIm5hbWVzIjpbIm1vZHVsZSIsImV4cG9ydHMiLCJ0aXRsZSIsImljb24iLCJkZXNjIiwiaW50cm9kdWNlIiwidXBkYXRlIl0sIm1hcHBpbmdzIjoiOztBQUFBQSxPQUFPQyxPQUFQLEdBQWlCLENBQ2Y7QUFDRUMsU0FBTyxNQURUO0FBRUVDLFFBQU0sc0JBRlI7QUFHRUMsUUFBTSxZQUhSO0FBSUVDLGFBQVcsaUJBSmI7QUFLRUMsVUFBUTtBQUxWLENBRGUsRUFPWjtBQUNESixTQUFPLElBRE47QUFFREMsUUFBTSxvQkFGTDtBQUdEQyxRQUFNLFlBSEw7QUFJREMsYUFBVyxzQkFKVjtBQUtEQyxVQUFRO0FBTFAsQ0FQWSxFQWFaO0FBQ0RKLFNBQU8sTUFETjtBQUVEQyxRQUFNLG9CQUZMO0FBR0RDLFFBQU0sWUFITDtBQUlEQyxhQUFXLDhDQUpWO0FBS0RDLFVBQVE7QUFMUCxDQWJZLEVBbUJaO0FBQ0RKLFNBQU8sUUFETjtBQUVEQyxRQUFNLHFCQUZMO0FBR0RDLFFBQU0sT0FITDtBQUlEQyxhQUFXLFlBSlY7QUFLREMsVUFBUTtBQUxQLENBbkJZLEVBeUJaO0FBQ0RKLFNBQU8sTUFETjtBQUVEQyxRQUFNLGlCQUZMO0FBR0RDLFFBQU0sV0FITDtBQUlEQyxhQUFXLFdBSlY7QUFLREMsVUFBUTtBQUxQLENBekJZLEVBK0JaO0FBQ0RKLFNBQU8sTUFETjtBQUVEQyxRQUFNLGtCQUZMO0FBR0RDLFFBQU0saUJBSEw7QUFJREMsYUFBVyxtQkFKVjtBQUtEQyxVQUFRO0FBTFAsQ0EvQlksQ0FBakIiLCJmaWxlIjoiY29udGVudHMuanMiLCJzb3VyY2VzQ29udGVudCI6WyJtb2R1bGUuZXhwb3J0cyA9IFtcbiAge1xuICAgIHRpdGxlOiAn5YWo5rCR55u05pKtJyxcbiAgICBpY29uOiAnLi4vaW1hZ2UvcXVhbm1pbi5wbmcnLFxuICAgIGRlc2M6ICforqnlubTovbvkurrniLHnnIvnmoTnm7Tmkq3jgIInLFxuICAgIGludHJvZHVjZTogJ+WFqOawkeebtOaSre+8jOWBmuW5tOi9u+S6uueIseeci+eahOebtOaSreOAgicsXG4gICAgdXBkYXRlOiAn44CQ5LyY5YyW44CRIOa4uOaIj+S4reW/g+S8mOWMlu+8jOeOqea4uOaIj+abtOmhuueVhSdcbiAgfSwge1xuICAgIHRpdGxlOiAn5LyY6YW3JyxcbiAgICBpY29uOiAnLi4vaW1hZ2UveW91a3UucG5nJyxcbiAgICBkZXNjOiAn6Z2e5bi45aW955So55qE6KeG6aKRQVBQJyxcbiAgICBpbnRyb2R1Y2U6ICfjgIrlsIblhpvlnKjkuIrjgIvlpbPmiY3nlLfosozvvIzpgJfotqPoia/nvJjvvIzkvJjphbfng63mkq0nLFxuICAgIHVwZGF0ZTogJ+KAnOS8muWRmOS4reW/g+KAneWumuWItuearuiCpOWFqOaWsOS4iue6v++8jOWPguS4jua0u+WKqOiOt+W+l+mZkOmHj+earuiCpO+8jOijheaJruS9oOeahOS4quS6uuS4u+mhtSdcbiAgfSwge1xuICAgIHRpdGxlOiAn54aK54yrVFYnLFxuICAgIGljb246ICcuLi9pbWFnZS9wYW5kYS5wbmcnLFxuICAgIGRlc2M6ICfpnZ7luLjlpb3nlKjnmoTnnIvnm7Tmkq3ova/ku7YnLFxuICAgIGludHJvZHVjZTogJ+W/q+S5kOWwveWcqOeGiueMq+ebtOaSre+8jOS6kembhkxPTOOAgURvdGEy44CB54KJ55+z5Lyg6K+0562J5ri45oiP5b2T57qi5piO5pif5Li75pKt77yMMjTlsI/ml7blhoXlrrnkuI3miZPng4onLFxuICAgIHVwZGF0ZTogJ+eGiueMq+S4pOWRqOW5tOebm+WFuOWNs+WwhuW8gOWQrydcbiAgfSwge1xuICAgIHRpdGxlOiAnVHdpdGNoJyxcbiAgICBpY29uOiAnLi4vaW1hZ2UvdHdpdGNoLnBuZycsXG4gICAgZGVzYzogJ+mcgOimgVZQTicsXG4gICAgaW50cm9kdWNlOiAn5YWo5LiW55WM55qE55u05pKt6YO95Zyo6L+Z6YeMJyxcbiAgICB1cGRhdGU6ICfkuI3pnIDopoHmm7TmlrDvvIzkuIDnm7Tlvog2LidcbiAgfSwge1xuICAgIHRpdGxlOiAn6IW+6K6v6KeG6aKRJyxcbiAgICBpY29uOiAnLi4vaW1hZ2UvdHgucG5nJyxcbiAgICBkZXNjOiAn5rW36YeP6KeG6aKR77yM562J5L2g5p2l55yLJyxcbiAgICBpbnRyb2R1Y2U6ICfnsr7lvanlhoXlrrnvvIznjrDlnKjlsLHopoEnLFxuICAgIHVwZGF0ZTogJ+S8mOWMlua1j+iniOS9k+mqjO+8jOaPkOWNh+mhtemdouWKoOi9vemAn+W6puOAgidcbiAgfSwge1xuICAgIHRpdGxlOiAn5omL5py6UVEnLFxuICAgIGljb246ICcuLi9pbWFnZS9xcTEucG5nJyxcbiAgICBkZXNjOiAn5LmQ5Zyo5rKf6YCaMTflubTvvIzogYrlpKnmrKLkuZA55Lq/5Lq6JyxcbiAgICBpbnRyb2R1Y2U6ICfmnI3liqHotoXov4fnmb7liIbkuYvkuZ3ljYHnmoTnp7vliqjkupLogZTnvZHnlKjmiLcnLFxuICAgIHVwZGF0ZTogJ+aLjeaRhOeFp+eJhy/nn63op4bpopHml7bvvIzlj6/mjInnsbvlnovmjJHpgInmjILku7bjgIHmu6TplZzvvIzkvZPpqozng63pl6jmlrDmva7nibnmlYjvvJsnXG4gIH1cbl1cbiJdfQ==
